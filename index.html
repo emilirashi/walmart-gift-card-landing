@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your $500 Walmart Gift Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .walmart-logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0071ce;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 60px 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .badge {
+            display: inline-block;
+            color: #0071ce;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            color: #001a33;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .steps {
+            background: #f0f5fb;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .step {
+            display: flex;
+            margin-bottom: 24px;
+            align-items: flex-start;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            background: #0071ce;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: #001a33;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .step-content p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #0071ce 0%, #005ba1 100%);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 113, 206, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 113, 206, 0.4);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #666;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .security-badge::before {
+            content: "⭐";
+            font-size: 16px;
+        }
+
+        .faq {
+            margin-top: 60px;
+        }
+
+        .faq-title {
+            text-align: center;
+            color: #001a33;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #001a33;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #f5f7fa;
+        }
+
+        .faq-icon {
+            color: #0071ce;
+            font-size: 20px;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px 20px;
+            color: #666;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #0071ce;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .card {
+                padding: 30px 20px;
+            }
+
+            .steps {
+                padding: 20px;
+            }
+
+            .step {
+                margin-bottom: 20px;
+            }
+
+            .step-number {
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="walmart-logo">🛒 WALMART</div>
+        </div>
+
+        <div class="card">
+            <div class="badge">LIMITED-TIME REWARD</div>
+            <h1>Get Your $500 Gift Card</h1>
+            <p class="subtitle">Here's how it works:</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Click the button below</h3>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Enter your email to continue</h3>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Complete 2–3 recommended offers ($0 needed)</h3>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Unlock your reward</h3>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://giftclick.org/aff_c?offer_id=1377&aff_id=191194" class="cta-button">Claim Now</a>
+            <div class="security-badge">Secure offer · No payment required</div>
+        </div>
+
+        <div class="faq">
+            <h2 class="faq-title">Frequently asked questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How do I get started?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Simply click the "Claim Now" button above, enter your email, and follow the steps. It only takes a few minutes to get started and unlock your $500 gift card.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is payment required?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    No payment is required to participate in this offer. You'll only need to complete some recommended offers to unlock your reward. All offers are completely free to try.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="#privacy">Privacy Policy</a> | <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.faq-icon');
+            
+            answer.classList.toggle('show');
+            icon.textContent = answer.classList.contains('show') ? '−' : '+';
+        }
+    </script>
+</body>
+</html>
