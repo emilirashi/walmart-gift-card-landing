@@ -13,71 +13,74 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            background: #f5f7fa;
             padding: 40px 20px;
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .container {
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 750px;
+            width: 100%;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .walmart-logo {
-            max-width: 200px;
+            max-width: 180px;
             height: auto;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .card {
             background: white;
-            border-radius: 12px;
-            padding: 60px 40px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .badge {
             display: inline-block;
             color: #0071ce;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
             text-transform: uppercase;
         }
 
         h1 {
             color: #001a33;
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 700;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             line-height: 1.2;
         }
 
         .subtitle {
-            color: #666;
-            font-size: 18px;
-            margin-bottom: 40px;
+            color: #7a8a99;
+            font-size: 16px;
+            margin-bottom: 35px;
         }
 
         .steps {
             background: #f0f5fb;
             border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 40px;
+            padding: 30px;
+            margin-bottom: 30px;
             text-align: left;
         }
 
         .step {
             display: flex;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             align-items: flex-start;
         }
 
@@ -88,49 +91,51 @@
         .step-number {
             background: #0071ce;
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 16px;
-            margin-right: 20px;
+            font-size: 15px;
+            margin-right: 16px;
             flex-shrink: 0;
         }
 
         .step-content h3 {
             color: #001a33;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
         }
 
         .step-content p {
-            color: #666;
-            font-size: 14px;
+            color: #7a8a99;
+            font-size: 13px;
         }
 
         .cta-button {
-            background: linear-gradient(135deg, #0071ce 0%, #005ba1 100%);
+            background: #0071ce;
             color: white;
             border: none;
-            padding: 16px 40px;
-            font-size: 18px;
+            padding: 14px 40px;
+            font-size: 16px;
             font-weight: 600;
             border-radius: 8px;
             cursor: pointer;
             width: 100%;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(0, 113, 206, 0.3);
+            transition: background-color 0.2s, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 113, 206, 0.25);
             text-decoration: none;
             display: inline-block;
+            margin-bottom: 15px;
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 113, 206, 0.4);
+            background-color: #005ba1;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(0, 113, 206, 0.3);
         }
 
         .cta-button:active {
@@ -141,62 +146,64 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            color: #666;
-            font-size: 14px;
-            margin-top: 20px;
+            gap: 6px;
+            color: #7a8a99;
+            font-size: 13px;
         }
 
         .security-badge::before {
             content: "⭐";
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .faq {
-            margin-top: 60px;
+            margin-top: 40px;
         }
 
         .faq-title {
             text-align: center;
             color: #001a33;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .faq-item {
             background: white;
             border-radius: 8px;
-            margin-bottom: 16px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
             overflow: hidden;
+            border: 1px solid #e6ecf1;
         }
 
         .faq-question {
-            padding: 20px;
+            padding: 18px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: #001a33;
             font-weight: 600;
+            font-size: 14px;
             transition: background-color 0.2s;
         }
 
         .faq-question:hover {
-            background-color: #f5f7fa;
+            background-color: #f9fafb;
         }
 
         .faq-icon {
             color: #0071ce;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .faq-answer {
-            padding: 0 20px 20px 20px;
-            color: #666;
+            padding: 0 18px 18px 18px;
+            color: #7a8a99;
             display: none;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 13px;
         }
 
         .faq-answer.show {
@@ -205,15 +212,15 @@
 
         .footer {
             text-align: center;
-            padding: 40px 20px;
-            color: #666;
-            font-size: 14px;
+            padding: 30px 20px;
+            color: #7a8a99;
+            font-size: 13px;
         }
 
         .footer a {
             color: #0071ce;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 5px;
         }
 
         .footer a:hover {
@@ -226,7 +233,7 @@
             }
 
             .card {
-                padding: 30px 20px;
+                padding: 35px 25px;
             }
 
             .steps {
@@ -234,17 +241,17 @@
             }
 
             .step {
-                margin-bottom: 20px;
+                margin-bottom: 18px;
             }
 
             .step-number {
-                width: 36px;
-                height: 36px;
+                width: 32px;
+                height: 32px;
                 font-size: 14px;
             }
 
             .walmart-logo {
-                max-width: 150px;
+                max-width: 140px;
             }
         }
     </style>
@@ -297,7 +304,7 @@
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFAQ(this)">
                     <span>How do I get started?</span>
-                    <span class="faq-icon">+</span>
+                    <span class="faq-icon">›</span>
                 </div>
                 <div class="faq-answer">
                     Simply click the "Claim Now" button above, enter your email, and follow the steps. It only takes a few minutes to get started and unlock your $500 gift card.
@@ -307,7 +314,7 @@
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFAQ(this)">
                     <span>Is payment required?</span>
-                    <span class="faq-icon">+</span>
+                    <span class="faq-icon">›</span>
                 </div>
                 <div class="faq-answer">
                     No payment is required to participate in this offer. You'll only need to complete some recommended offers to unlock your reward. All offers are completely free to try.
@@ -326,7 +333,7 @@
             const icon = element.querySelector('.faq-icon');
             
             answer.classList.toggle('show');
-            icon.textContent = answer.classList.contains('show') ? '−' : '+';
+            icon.textContent = answer.classList.contains('show') ? '‹' : '›';
         }
     </script>
 </body>
