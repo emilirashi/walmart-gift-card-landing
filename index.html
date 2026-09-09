@@ -3,342 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Your $500 Walmart Gift Card</title>
+    <title>SHEIN Product Reviewer Program</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #ffffff;
-            padding: 20px 20px;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 750px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .logo-wrapper {
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .walmart-logo {
-            max-width: 160px;
-            height: auto;
-            display: block;
-        }
-
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 35px 30px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-            text-align: center;
-            margin-bottom: 20px;
-            border: 1px solid #e6ecf1;
-        }
-
-        .badge {
-            display: inline-block;
-            color: #0071ce;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 1.3px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        h1 {
-            color: #001a33;
-            font-size: 38px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            line-height: 1.2;
-        }
-
-        .subtitle {
-            color: #7a8a99;
-            font-size: 15px;
-            margin-bottom: 22px;
-            font-weight: 500;
-        }
-
-        .steps {
-            background: #f0f5fb;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 22px;
-            text-align: left;
-        }
-
-        .step {
-            display: flex;
-            margin-bottom: 15px;
-            align-items: flex-start;
-        }
-
-        .step:last-child {
-            margin-bottom: 0;
-        }
-
-        .step-number {
-            background: #0071ce;
-            color: white;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 14px;
-            margin-right: 14px;
-            flex-shrink: 0;
-        }
-
-        .step-content h3 {
-            color: #001a33;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 0;
-            line-height: 1.3;
-        }
-
-        .cta-button {
-            background: #0071ce;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            font-size: 15px;
-            font-weight: 600;
-            border-radius: 6px;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.2s, transform 0.2s;
-            box-shadow: 0 3px 10px rgba(0, 113, 206, 0.2);
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 12px;
-        }
-
-        .cta-button:hover {
-            background-color: #005ba1;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 14px rgba(0, 113, 206, 0.25);
-        }
-
-        .cta-button:active {
-            transform: translateY(0);
-        }
-
-        .security-badge {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            color: #7a8a99;
-            font-size: 12px;
-        }
-
-        .security-badge::before {
-            content: "⭐";
-            font-size: 13px;
-        }
-
-        .faq {
-            margin-top: 25px;
-        }
-
-        .faq-title {
-            text-align: center;
-            color: #001a33;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .faq-item {
-            background: white;
-            border-radius: 6px;
-            margin-bottom: 8px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; }
+        .star-icon { width: 18px; height: 18px; fill: #ffcc00; }
+        .testimonial-star { width: 14px; height: 14px; fill: #ffcc00; }
+        .fade-in { animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        #faq-content {
+            max-height: 500px;
+            transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
             overflow: hidden;
-            border: 1px solid #e6ecf1;
+        }
+        #faq-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        #faq-arrow {
+            transition: transform 0.3s ease;
+        }
+        #faq-arrow.rotated {
+            transform: rotate(180deg);
         }
 
-        .faq-question {
-            padding: 14px 16px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #001a33;
-            font-weight: 600;
-            font-size: 13px;
-            transition: background-color 0.2s;
+        #notification-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            transform: translateX(-120%);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
-
-        .faq-question:hover {
-            background-color: #f9fafb;
-        }
-
-        .faq-icon {
-            color: #0071ce;
-            font-size: 16px;
-        }
-
-        .faq-answer {
-            padding: 0 16px 14px 16px;
-            color: #7a8a99;
-            display: none;
-            line-height: 1.4;
-            font-size: 12px;
-        }
-
-        .faq-answer.show {
-            display: block;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px 20px;
-            color: #7a8a99;
-            font-size: 12px;
-        }
-
-        .footer a {
-            color: #0071ce;
-            text-decoration: none;
-            margin: 0 3px;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 32px;
-            }
-
-            .card {
-                padding: 28px 24px;
-            }
-
-            .steps {
-                padding: 16px;
-            }
-
-            .step {
-                margin-bottom: 12px;
-            }
-
-            .step-number {
-                width: 30px;
-                height: 30px;
-                font-size: 13px;
-                margin-right: 12px;
-            }
-
-            .walmart-logo {
-                max-width: 140px;
-            }
+        #notification-popup.show {
+            transform: translateX(0);
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="logo-wrapper">
-                <img src="https://1000logos.net/wp-content/uploads/2017/05/Walmart-Logo.png" alt="Walmart Logo" class="walmart-logo">
-            </div>
+<body class="min-h-screen flex items-center justify-center p-2 sm:p-4">
+
+    <!-- CONFIGURATION -->
+    <script>
+        const CONFIG = {
+            brandName: "SHEIN",
+            rewardAmount: "USD 750",
+            affiliateLink: "https://giftclick.org/aff_c?offer_id=1229&aff_id=191194",
+            logoUrl: "https://img.icons8.com/ios_filled/1200/shein.jpg"
+        };
+    </script>
+
+    <!-- SOCIAL PROOF NOTIFICATION -->
+    <div id="notification-popup" class="bg-white border border-gray-100 rounded-2xl shadow-xl p-4 flex items-center gap-4 max-w-[320px] w-full">
+        <div id="notif-avatar" class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white font-bold text-xl shrink-0">
+            L
         </div>
-
-        <div class="card">
-            <div class="badge">LIMITED-TIME REWARD</div>
-            <h1>Get Your $500 Gift Card</h1>
-            <p class="subtitle">Here's how it works:</p>
-
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Click the button below</h3>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Enter your email to continue</h3>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Complete 2–3 recommended offers ($0 needed)</h3>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Unlock your reward</h3>
-                    </div>
-                </div>
-            </div>
-
-            <a href="https://giftclick.org/aff_c?offer_id=1377&aff_id=191194" class="cta-button">Claim Now</a>
-            <div class="security-badge">Secure offer · No payment required</div>
+        <div class="flex flex-col">
+            <p class="text-[14px] text-gray-900 font-bold leading-tight">
+                <span id="notif-name">Lisa M.</span> completed <span id="notif-deals">8</span> deals
+            </p>
+            <p class="text-[14px] text-gray-600">
+                Received <span id="notif-amount" class="text-green-600 font-bold">$350</span> gift card
+            </p>
+            <p class="text-[12px] text-gray-400 mt-0.5">
+                <span id="notif-location">California</span> - Just now
+            </p>
         </div>
+    </div>
 
-        <div class="faq">
-            <h2 class="faq-title">Frequently asked questions</h2>
+    <!-- MAIN LANDING -->
+    <div class="max-w-lg w-full bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-gray-100 fade-in">
+        <div class="p-6 sm:p-8">
+            
+            <div class="flex justify-center mb-6">
+                <img id="brand-logo" src="" alt="SHEIN Logo" class="h-16 w-auto object-contain">
+            </div>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span>How do I get started?</span>
-                    <span class="faq-icon">›</span>
-                </div>
-                <div class="faq-answer">
-                    Simply click the "Claim Now" button above, enter your email, and follow the steps. It only takes a few minutes to get started and unlock your $500 gift card.
+            <h1 class="text-[22px] font-black text-center text-gray-900 leading-tight mb-6">
+                Want to get paid to be a Shein Product Reviewer
+            </h1>
+
+            <div class="bg-white border border-gray-100 rounded-[2rem] p-6 mb-6 shadow-sm">
+                <ul class="space-y-4 text-center text-[17px] text-gray-800">
+                    <li><span class="font-bold">1.</span> Click "apply now"</li>
+                    <li><span class="font-bold">2.</span> Enter your email & basic info</li>
+                    <li><span class="font-bold">3.</span> Complete 2-4 deals <span class="font-black"></span></li>
+                    <li><span class="font-bold">4.</span> Get Shopping credit </li>
+                </ul>
+                <div class="mt-6 pt-4 border-t border-gray-50 text-center text-xs font-medium text-gray-400 italic">
+                    💡 Pro tip: Focus on the quick & easy deals!
                 </div>
             </div>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span>Is payment required?</span>
-                    <span class="faq-icon">›</span>
+            <a id="cta-link" href="#" class="block w-full bg-black text-white text-center py-5 rounded-2xl text-xl font-black uppercase tracking-[0.2em] transition-all transform hover:scale-[1.01] active:scale-95 shadow-xl shadow-gray-200">
+                APPLY NOW
+            </a>
+
+            <!-- FAQ SECTION -->
+            <div class="mt-8 bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+                <div onclick="toggleFAQ()" class="p-5 flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors">
+                    <h2 class="text-xl font-bold text-gray-900">Common Questions</h2>
+                    <svg id="faq-arrow" class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                    </svg>
                 </div>
-                <div class="faq-answer">
-                    No payment is required to participate in this offer. You'll only need to complete some recommended offers to unlock your reward. All offers are completely free to try.
+                <div id="faq-content" class="p-6 space-y-6 border-t border-gray-50">
+                    <div>
+                        <h3 class="text-[17px] font-bold text-gray-900 mb-1">How long do the deals last?</h3>
+                        <p class="text-gray-500 text-[15px]">Quick 10-20 minute completion time per deal</p>
+                    </div>
+                    <div>
+                        <h3 class="text-[17px] font-bold text-gray-900 mb-1">What are deals?</h3>
+                        <p class="text-gray-500 text-[15px]">Simple tasks like app downloads, surveys, or trial subscriptions with specific reward goals.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-[17px] font-bold text-gray-900 mb-1">How many deals do I need?</h3>
+                        <p class="text-gray-500 text-[15px]">4-5 deals minimum. The more you do, the more you receive in gift card credits.</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="footer">
-            <a href="#privacy">Privacy Policy</a> | <a href="#contact">Contact</a>
+            <!-- INLINE RATING SECTION -->
+            <div class="mt-8 flex items-center justify-center gap-2">
+                <div class="flex gap-0.5">
+                    <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="text-[18px] font-bold text-gray-900">
+                    4.9/5 <span class="font-normal text-gray-400 ml-1 text-base">(2,847 reviews)</span>
+                </p>
+            </div>
+
+            <!-- ALL 5 REVIEWS RESTORED -->
+            <div class="mt-6 space-y-3">
+                <!-- Sarah M. -->
+                <div class="bg-white p-5 rounded-2xl border border-gray-100">
+                    <div class="flex justify-between items-start mb-1">
+                        <p class="text-[16px] font-bold text-gray-900">Sarah M.</p>
+                        <div class="flex gap-0.5">
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                    </div>
+                    <p class="text-[12px] text-gray-400 mb-2">2 days ago</p>
+                    <p class="text-[15px] font-normal text-gray-800 leading-snug">"Amazing idea! I completed all the deals in one evening and got my $750 within 48 hours. Totally legit!"</p>
+                </div>
+
+                <!-- Michael T. -->
+                <div class="bg-white p-5 rounded-2xl border border-gray-100">
+                    <div class="flex justify-between items-start mb-1">
+                        <p class="text-[16px] font-bold text-gray-900">Michael T.</p>
+                        <div class="flex gap-0.5">
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                    </div>
+                    <p class="text-[12px] text-gray-400 mb-2">1 week ago</p>
+                    <p class="text-[15px] font-normal text-gray-800 leading-snug">"Skeptical at first, but this actually works. Just follow the instructions carefully and you'll get your reward. Worth the time!"</p>
+                </div>
+
+                <!-- Jennifer L. -->
+                <div class="bg-white p-5 rounded-2xl border border-gray-100">
+                    <div class="flex justify-between items-start mb-1">
+                        <p class="text-[16px] font-bold text-gray-900">Jennifer L.</p>
+                        <div class="flex gap-0.5">
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                    </div>
+                    <p class="text-[12px] text-gray-400 mb-2">5 days ago</p>
+                    <p class="text-[15px] font-normal text-gray-800 leading-snug">"Best decision ever! The deals were easy to complete and customer support was helpful when I had questions."</p>
+                </div>
+
+                <!-- David R. -->
+                <div class="bg-white p-5 rounded-2xl border border-gray-100">
+                    <div class="flex justify-between items-start mb-1">
+                        <p class="text-[16px] font-bold text-gray-900">David R.</p>
+                        <div class="flex gap-0.5">
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                    </div>
+                    <p class="text-[12px] text-gray-400 mb-2">3 days ago</p>
+                    <p class="text-[15px] font-normal text-gray-800 leading-snug">"I've tried other reward programs before but this one actually delivered. Completed 18 deals and received my payment on time."</p>
+                </div>
+
+                <!-- Amanda K. -->
+                <div class="bg-white p-5 rounded-2xl border border-gray-100">
+                    <div class="flex justify-between items-start mb-1">
+                        <p class="text-[16px] font-bold text-gray-900">Amanda K.</p>
+                        <div class="flex gap-0.5">
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="testimonial-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                    </div>
+                    <p class="text-[12px] text-gray-400 mb-2">1 week ago</p>
+                    <p class="text-[15px] font-normal text-gray-800 leading-snug">"Super straightforward process. Made sure to keep track of your deals and take screenshots. Got my $750 reward!"</p>
+                </div>
+            </div>
+
+            <!-- GREEN SQUARE CHECKBOX FOOTER -->
+            <div class="mt-6 mb-2 flex items-center justify-center gap-2 text-[13px] font-medium text-gray-500">
+                <div class="w-5 h-5 bg-[#31c440] rounded flex items-center justify-center">
+                    <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <span>12,400+ gift cards claimed this month</span>
+            </div>
         </div>
     </div>
 
     <script>
-        function toggleFAQ(element) {
-            const answer = element.nextElementSibling;
-            const icon = element.querySelector('.faq-icon');
-            
-            answer.classList.toggle('show');
-            icon.textContent = answer.classList.contains('show') ? '‹' : '›';
+        document.getElementById('brand-logo').src = CONFIG.logoUrl;
+        document.getElementById('cta-link').href = CONFIG.affiliateLink;
+
+        function toggleFAQ() {
+            const content = document.getElementById('faq-content');
+            const arrow = document.getElementById('faq-arrow');
+            content.classList.toggle('collapsed');
+            arrow.classList.toggle('rotated');
         }
+
+        const notifications = [
+            { name: "Lisa M.", deals: "8", amount: "$350", location: "California" },
+            { name: "Mike R.", deals: "20", amount: "$1000", location: "Florida" },
+            { name: "Chris P.", deals: "12", amount: "$500", location: "Ohio" },
+            { name: "Nicole H.", deals: "10", amount: "$400", location: "Illinois" },
+            { name: "John D.", deals: "5", amount: "$150", location: "Texas" },
+            { name: "Sarah K.", deals: "4", amount: "$100", location: "New York" }
+        ];
+
+        const popup = document.getElementById('notification-popup');
+
+        function showNotification() {
+            const data = notifications[Math.floor(Math.random() * notifications.length)];
+            document.getElementById('notif-avatar').textContent = data.name.charAt(0);
+            document.getElementById('notif-name').textContent = data.name;
+            document.getElementById('notif-deals').textContent = data.deals;
+            document.getElementById('notif-amount').textContent = data.amount;
+            document.getElementById('notif-location').textContent = data.location;
+            popup.classList.add('show');
+            setTimeout(() => {
+                popup.classList.remove('show');
+                setTimeout(showNotification, 5000 + Math.random() * 3000);
+            }, 4000);
+        }
+        setTimeout(showNotification, 3000);
     </script>
 </body>
 </html>
